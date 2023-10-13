@@ -38,20 +38,20 @@ public class ClienteController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> save(@RequestBody Cliente cliente) {
+    public ResponseEntity<Cliente> save(@RequestBody Cliente cliente) {
         clienteService.save(cliente);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok().body(cliente);
 
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public ResponseEntity<Cliente> update(@PathVariable Long id, @RequestBody Cliente cliente) {
         clienteService.update(id, cliente);
         return ResponseEntity.ok().body(cliente);
 
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteById(@PathVariable Long id) {
         clienteService.deleteById(id);
         return ResponseEntity.ok().build();
