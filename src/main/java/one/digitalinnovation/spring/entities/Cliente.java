@@ -18,6 +18,6 @@ public class Cliente {
     private String nome;
 
     @ManyToOne
-    private Endereco endereco;
+    private Endereco endereco; 
 
 }
